@@ -1,4 +1,4 @@
-/* Container for the form */
+Container for the form
 section.container {
   margin: 30%; /* Margin on all sides */
 }
@@ -89,4 +89,21 @@ img.mb-3 {
 }
 .container, mt-5 mb-5{
   text-align: left;
+}
+.col-md-8, .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  padding: 1rem; /* Optional padding */
+  margin: 0 auto; /* Center horizontally within parent */
+}
+
+.d-grid d-md-flex mt-2{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  padding: 1rem; /* Optional padding */
+  margin: 0 auto; /* Center horizontally within parent */
 }
