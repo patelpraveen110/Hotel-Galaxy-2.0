@@ -28,7 +28,7 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/edit-room/:roomId" element={<EditRoom />} />
+            <Route path="/edit-room/:roomId" element={<EditRoom />} />
             <Route path="/existing-rooms" element={<ExistingRooms />} />
             <Route path="/add-room" element={<AddRoom />} />
 
@@ -51,7 +51,7 @@ function App() {
             <Route path="/register" element={<Registration />} />
 
             <Route path="/profile" element={<Profile />} />
-            <Route path="/logout" element={<FindBooking />} /> */}
+            <Route path="/logout" element={<FindBooking />} />
           </Routes>
         </Router>
         <Footer />
