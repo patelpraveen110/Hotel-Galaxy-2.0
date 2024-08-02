@@ -31,7 +31,6 @@ function App() {
             <Route path="/edit-room/:roomId" element={<EditRoom />} />
             <Route path="/existing-rooms" element={<ExistingRooms />} />
             <Route path="/add-room" element={<AddRoom />} />
-
             <Route
               path="/book-room/:roomId"
               element={
@@ -41,15 +40,12 @@ function App() {
               }
             />
             <Route path="/browse-all-rooms" element={<RoomListing />} />
-
             <Route path="/admin" element={<Admin />} />
             <Route path="/booking-success" element={<BookingSuccess />} />
             <Route path="/existing-bookings" element={<Bookings />} />
             <Route path="/find-booking" element={<FindBooking />} />
-
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Registration />} />
-
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<FindBooking />} />
           </Routes>
