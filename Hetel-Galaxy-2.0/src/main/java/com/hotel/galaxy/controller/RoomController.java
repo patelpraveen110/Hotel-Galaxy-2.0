@@ -9,6 +9,8 @@ import com.hotel.galaxy.service.BookingService;
 import com.hotel.galaxy.service.RoomService;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,7 +24,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("/rooms")
-@CrossOrigin(origins = "https://abovegalaxy.netlify.app/")
+@CrossOrigin(origins = "http://localhost:5173/")
 @RestController
 public class RoomController {
     private final RoomService roomService;
@@ -61,6 +63,12 @@ public class RoomController {
         return ResponseEntity.ok(roomResponses);
     }
 
+    @DeleteMapping("/delete/room/{roomId}")
+    public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
+        roomService.deleteRoom(roomId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
     private RoomResponse getRoomResponse(Room room) throws PhotoRetrievalException {
         List<BookedRoom> bookings = getAllBookingsByRoomId(room.getId());
 //        List<BookingResponse> bookingInfo = bookings.stream()
@@ -84,6 +92,9 @@ public class RoomController {
     private List<BookedRoom> getAllBookingsByRoomId(Long roomId) {
         return bookingService.getAllBookingsByRoomId(roomId);
     }
+
+
+
 
 
 }
